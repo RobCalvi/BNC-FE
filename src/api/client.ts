@@ -1,8 +1,8 @@
 import axios from "axios";
-// import { BASE_URL } from "../environment";
+import { BASE_URL } from "../environment";
 
 const apiClient = axios.create({
-    baseURL: "https://bnc-be.onrender.com"
+    baseURL: BASE_URL
 })
 
 
