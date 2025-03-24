@@ -9,7 +9,7 @@ import {
   Box
 } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { Reminder, ReminderState } from '../../models/reminder/reminder';
+import { Reminder } from '../../models/reminder/reminder'; // Removed ReminderState
 import { useAppDispatch, useAppSelector } from '../../state/redux/hooks';
 import { completeCompanyActionReminder, updateReminder } from '../../api/action';
 import { removeReminder, updateOneReminder } from '../../state/redux/features/dashboardSlice';
@@ -37,23 +37,17 @@ const CompanyAllRemindersModal: React.FC<CompanyAllRemindersModalProps> = ({
     }
   }, [reminders]);
 
-  // Define your columns, each using the two-argument signature for valueGetter
   const columns: GridColDef[] = [
     {
       field: 'companyName',
       headerName: 'Company',
       flex: 1,
       editable: false,
-      // We can rely on the raw field if the reminder object directly has companyName
-      // So no need for valueGetter if "companyName" is the direct property
     },
     {
       field: 'actionTitle',
       headerName: 'Action Title',
       flex: 1,
-      // MUI v7 DataGrid signature: valueGetter: (params, row)
-      // But we typically do: valueGetter: (_, row) => ...
-      // so we ignore the first param and use the second as the row
       valueGetter: (_, row) => row.action?.title || '',
     },
     {
@@ -68,21 +62,14 @@ const CompanyAllRemindersModal: React.FC<CompanyAllRemindersModalProps> = ({
       type: 'date',
       flex: 1,
       editable: true,
-      // Convert row.dueDate to a JS Date if present
-      valueGetter: (_, row) => (row.dueDate ? new Date(row.dueDate) : null),
-      // Format as a readable string
-    //   valueFormatter: (params) => {
-    //     if (!params.value) return '';
-    //     return (params.value as Date).toLocaleDateString();
-    //  },
+      valueGetter: (_, row) =>
+        row.dueDate ? new Date(row.dueDate) : null,
     },
     {
       field: 'state',
       headerName: 'State',
       flex: 1,
       editable: false,
-      // If "state" is just a string like 'PAST' or 'NOT_PAST', we can show it directly
-      // or do something fancier. We'll keep it simple here:
       valueGetter: (_, row) => row.state || '',
     },
     {
@@ -99,7 +86,7 @@ const CompanyAllRemindersModal: React.FC<CompanyAllRemindersModalProps> = ({
       filterable: false,
       width: 120,
       renderCell: (params) => {
-        if (!params?.row) return null;
+        if (!params.row) return null;
 
         const reminderId = params.row.id;
         const disabled = params.row.isCompleted;
@@ -131,7 +118,9 @@ const CompanyAllRemindersModal: React.FC<CompanyAllRemindersModalProps> = ({
   // If using inline cell editing for “dueDate” or “isCompleted”:
   const processRowUpdate = useCallback(
     async (newRow: Reminder, oldRow: Reminder) => {
-      if (newRow === oldRow) return oldRow;
+      if (newRow === oldRow) {
+        return oldRow;
+      }
 
       const payload: Partial<Reminder> = {};
       if (newRow.dueDate !== oldRow.dueDate) {
@@ -142,15 +131,18 @@ const CompanyAllRemindersModal: React.FC<CompanyAllRemindersModalProps> = ({
       }
 
       try {
-        const result = await updateReminder(newRow.id, payload);
-        dispatch(updateOneReminder(result.data));
-        return result.data;
+        // 'updateReminder' presumably returns a single Reminder object
+        const updated = await updateReminder(newRow.id, payload);
+        // Update Redux store with that updated object
+        dispatch(updateOneReminder(updated));
+        // Return it so DataGrid keeps the new row
+        return updated;
       } catch (err) {
         console.error('Failed to update reminder:', err);
         throw err; // Tells DataGrid to revert if the API call fails
       }
     },
-    [dispatch],
+    [dispatch]
   );
 
   const handleProcessRowUpdateError = useCallback((error: any) => {

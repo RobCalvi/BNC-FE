@@ -19,22 +19,42 @@ type CompanyDashboardReminderTileProps = {
 }
 
 const CompanyDashboardReminderTile: React.FC<CompanyDashboardReminderTileProps> = ({ reminder }) => {
-    const theme = useTheme()
-    const { status: { error }, setError } = useStatus()
-    const dispatch = useAppDispatch()
+    const theme = useTheme();
+    const { status: { error }, setError } = useStatus();
+    const dispatch = useAppDispatch();
+
     const handleCompleteReminder = async () => {
-        console.log(reminder)
-        await completeCompanyActionReminder(reminder.id)
-            .then(res => {
-                if (res.data) {
-                    dispatch(removeReminder(reminder.id))
-                }
-            })
-            .catch(_ => setError("Could not complete reminder."))
-    }
+        console.log(reminder);
+        try {
+            const res = await completeCompanyActionReminder(reminder.id);
+            // If res is a boolean:
+            if (res) {
+                dispatch(removeReminder(reminder.id));
+            }
+        } catch (err) {
+            setError("Could not complete reminder.");
+        }
+    };
+
     return (
-        <Box component="div" sx={{ background: reminder.state === ReminderState.PAST ? theme.palette.primary.light : theme.palette.success.light, mb: 2, p: 1, borderRadius: 2 }}>
-            <Box component="div" display="flex" flexDirection="row" justifyContent="space-between" flexWrap="wrap">
+        <Box
+            component="div"
+            sx={{
+                background: reminder.state === ReminderState.PAST
+                    ? theme.palette.primary.light
+                    : theme.palette.success.light,
+                mb: 2,
+                p: 1,
+                borderRadius: 2
+            }}
+        >
+            <Box
+                component="div"
+                display="flex"
+                flexDirection="row"
+                justifyContent="space-between"
+                flexWrap="wrap"
+            >
                 <Typography variant="body1">
                     {reminder.companyName}
                 </Typography>
@@ -53,13 +73,18 @@ const CompanyDashboardReminderTile: React.FC<CompanyDashboardReminderTileProps> 
             <Typography variant="caption" color="textSecondary">
                 Due: {new Date(reminder.dueDate).toLocaleDateString()}
             </Typography>
-            <Snackbar open={error !== null} autoHideDuration={3000} onClose={() => setError(null)} anchorOrigin={{vertical: 'top', horizontal: 'right'}}>
+            <Snackbar
+                open={error !== null}
+                autoHideDuration={3000}
+                onClose={() => setError(null)}
+                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            >
                 <Alert onClose={() => setError(null)} severity="error">
                     {error}
                 </Alert>
             </Snackbar>
         </Box>
-    )
-}
+    );
+};
 
-export default CompanyDashboardReminderTile
+export default CompanyDashboardReminderTile;
