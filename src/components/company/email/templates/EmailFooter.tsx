@@ -75,6 +75,11 @@ const EmailFooter: React.FC = () => {
           </div>
         </div>
       ))}
+
+      {/* Disclaimer / unsubscribe note */}
+      <p style={{ fontSize: "12px", color: "#999", textAlign: "center", marginTop: "30px" }}>
+        Pour nous joindre, <a href="https://www.fbngp.ca/" style={{ color: "#5f7d8b" }}>fbngp.ca</a>. Pour vos options de désinscription, <a href="https://www.bnc.ca/formulaires/communications/fbngp/retrait-consentement.html" style={{ color: "#5f7d8b" }}>cliquez ici</a>.
+      </p>
     </div>
   );
 };

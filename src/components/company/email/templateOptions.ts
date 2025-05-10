@@ -8,5 +8,6 @@ export const templates = [
   { key: 'Template6', name: 'Outil - philanthropie - dons de titres et dons planifiés', subject: 'Philanthropie et politiques de placement' },
   { key: 'Template7', name: 'Gabarit - Assurance collective', subject: 'Réduction des coûts - Négociez votre offre d\'assurances collectives' },
   { key: 'Template8', name: 'Outil - campagne de dons de titres', subject: 'Votre campagne de dons de titres 2024' },
+  { key: 'Template9', name: 'Maximisez vos ressources financières - Solutions sur mesure pour OBNL', subject: 'Maximisez vos ressources financières - Solutions sur mesure pour OBNL' },
 ];
   

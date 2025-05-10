@@ -19,6 +19,7 @@ import Template5 from "./templates/Template5";
 import Template6 from "./templates/Template6";
 import Template7 from "./templates/Template7";
 import Template8 from "./templates/Template8";
+import Template9 from "./templates/Template9";
 import { saveAs } from "file-saver";
 // import the postCompanyEmail function
 import { postCompanyEmail } from "../../../api/email";
@@ -47,6 +48,7 @@ const templateComponents: { [key: string]: React.FC<any> } = {
   Template6,
   Template7,
   Template8,
+  Template9
 };
 
 const CreateNewEmail: React.FC<CreateNewEmailProps> = ({
