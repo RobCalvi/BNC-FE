@@ -32,8 +32,8 @@ const Template1: React.FC<Template1Props> = ({ recipientName, recipientGender, s
       <h2>Gestion des actifs</h2>
 
       <p>
-        Notre <a href="https://www.fbngp.ca/content/dam/fbngp/microsites/groupe-financier-bernard/outils-obnl/politique-de-placement.pdf" style={{ color: "#1a73e8" }}>trousse d’élaboration sur les politiques de placement</a>
-        pourra s’avérer un outil utile pour guider vos réflexions :
+        Notre <a href="https://www.fbngp.ca/content/dam/fbngp/microsites/groupe-financier-bernard/outils-obnl/politique-de-placement.pdf" style={{ color: "#1a73e8" }}>trousse d’élaboration sur les politiques de placement </a>
+         pourra s’avérer un outil utile pour guider vos réflexions :
       </p>
 
       {policyToolBase64 && (
