@@ -141,7 +141,7 @@ const Template2: React.FC<Template2Props> = ({
             <p style={paragraphStyle}>
         <a
           href="https://outlook.office365.com/book/GroupeFinancierBernardFinancireBanqueNationale@cbncnbccs.onmicrosoft.com/"
-          style={{ ...linkStyle, fontWeight: 'bold' }}
+          style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
         >
           Planifiez une rencontre virtuelle
         </a>
