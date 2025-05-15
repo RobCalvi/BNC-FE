@@ -1,3 +1,5 @@
+// Template2.tsx
+
 import React, { useState, useEffect } from 'react';
 import EmailFooter from './EmailFooter';
 
@@ -25,10 +27,7 @@ const Template2: React.FC<Template2Props> = ({
       ? `Bonjour M. ${recipientName},`
       : `Bonjour Mme. ${recipientName},`;
 
-  // We’ll keep the banner image references as is
   const bannerPath = '/images/email/binary/template2/ap_template2_base64.txt';
-
-  // We only store banner base64 now (remove buttons)
   const [bannerBase64, setBannerBase64] = useState<string>('');
 
   const readBase64 = async (path: string): Promise<string> => {
@@ -49,7 +48,6 @@ const Template2: React.FC<Template2Props> = ({
         padding: '20px',
       }}
     >
-      {/* Banner */}
       {bannerBase64 && (
         <div style={{ textAlign: 'left', marginBottom: '20px' }}>
           <img
@@ -70,17 +68,11 @@ const Template2: React.FC<Template2Props> = ({
         >
           Jean-Philippe Bernard
         </a>
-        , Conseiller en gestion de patrimoine et Gestionnaire de portefeuille au
-        sein de la Financière Banque Nationale – Gestion de patrimoine. Mon
-        équipe et moi, effectuons une vigie de certains organismes de
-        bienfaisance qui ne font pas partie de la clientèle de la Banque
-        Nationale et de la Financière Banque Nationale.
+        , Conseiller en gestion de patrimoine et Gestionnaire de portefeuille au sein de la Financière Banque Nationale – Gestion de patrimoine.
       </p>
 
       <p style={paragraphStyle}>
-        Selon la plus récente déclaration <strong>T3010</strong> de votre
-        entreprise, disponible sur le site de l’<strong>ARC</strong>, voici le
-        statut de vos liquidités et placements :
+        Selon la plus récente déclaration <strong>T3010</strong> de votre entreprise, disponible sur le site de l’<strong>ARC</strong>, voici le statut de vos liquidités et placements :
       </p>
 
       <table
@@ -88,40 +80,18 @@ const Template2: React.FC<Template2Props> = ({
       >
         <thead>
           <tr>
-            <th
-              style={{
-                border: '1px solid #ddd',
-                padding: '8px',
-                backgroundColor: '#f2f2f2',
-              }}
-            >
-              Nom
-            </th>
-            <th
-              style={{
-                border: '1px solid #ddd',
-                padding: '8px',
-                backgroundColor: '#f2f2f2',
-              }}
-            >
+            <th style={{ border: '1px solid #ddd', padding: '8px', backgroundColor: '#f2f2f2' }}>Nom</th>
+            <th style={{ border: '1px solid #ddd', padding: '8px', backgroundColor: '#f2f2f2' }}>
               Argent comptant, comptes bancaires et placements à court terme
             </th>
-            <th
-              style={{
-                border: '1px solid #ddd',
-                padding: '8px',
-                backgroundColor: '#f2f2f2',
-              }}
-            >
+            <th style={{ border: '1px solid #ddd', padding: '8px', backgroundColor: '#f2f2f2' }}>
               Placements à long terme
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style={{ border: '1px solid #ddd', padding: '8px' }}>
-              {companyName}
-            </td>
+            <td style={{ border: '1px solid #ddd', padding: '8px' }}>{companyName}</td>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>
               {financials.checkingAccount
                 ? financials.checkingAccount.toLocaleString()
@@ -137,14 +107,10 @@ const Template2: React.FC<Template2Props> = ({
       </table>
 
       <p style={paragraphStyle}>
-        À cet égard, je vous invite à tirer un comparatif avec les conditions
-        actuelles de votre institution financière.
+        À cet égard, je vous invite à tirer un comparatif avec les conditions actuelles de votre institution financière.
       </p>
 
-      {/* 
-        Buttons (Side by Side) 
-        Using bulletproof HTML/CSS tables instead of images 
-      */}
+      {/* Buttons without borderRadius and no spacing */}
       <div style={{ textAlign: 'left', marginBottom: '20px' }}>
         <table border={0} cellPadding={0} cellSpacing={0} style={{ display: 'inline-block' }}>
           <tbody>
@@ -156,16 +122,7 @@ const Template2: React.FC<Template2Props> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <table
-                    border={0}
-                    cellPadding={0}
-                    cellSpacing={0}
-                    style={{
-                      backgroundColor: '#d6002e', // Red
-                      borderRadius: '4px',
-                      marginRight: '10px'
-                    }}
-                  >
+                  <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#d6002e' }}>
                     <tbody>
                       <tr>
                         <td
@@ -194,15 +151,7 @@ const Template2: React.FC<Template2Props> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <table
-                    border={0}
-                    cellPadding={0}
-                    cellSpacing={0}
-                    style={{
-                      backgroundColor: '#00336f', // Blue
-                      borderRadius: '4px',
-                    }}
-                  >
+                  <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#00336f' }}>
                     <tbody>
                       <tr>
                         <td
@@ -229,25 +178,17 @@ const Template2: React.FC<Template2Props> = ({
       </div>
 
       <p style={paragraphStyle}>
-        Le Groupe Financier Bernard est spécialisé dans la gestion des
-        organismes comme le vôtre avec près de <strong>100 clients OBNL</strong>
-        . Consultez quelques{' '}
+        Le Groupe Financier Bernard est spécialisé dans la gestion des organismes comme le vôtre avec près de <strong>100 clients OBNL</strong>. Consultez quelques{' '}
         <a
           href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services/obnl-fondations.html"
           style={{ color: '#1a73e8' }}
         >
           témoignages
         </a>
-        <span>. </span>
-        <strong>
-          Pour en apprendre davantage sur notre accompagnement personnalisé des
-          organismes, n’hésitez pas à communiquer avec nous dès aujourd’hui.
-        </strong>
+        . <strong>Pour en apprendre davantage sur notre accompagnement personnalisé des organismes, n’hésitez pas à communiquer avec nous dès aujourd’hui.</strong>
       </p>
 
-      {/* 
-        Final Call-to-Action (another bulletproof button)
-      */}
+      {/* Final Call-to-Action Button (no border radius) */}
       <div style={{ textAlign: 'left', marginBottom: '20px' }}>
         <a
           href="https://outlook.office365.com/book/GroupeFinancierBernardFinancireBanqueNationale@cbncnbccs.onmicrosoft.com/"
@@ -255,15 +196,7 @@ const Template2: React.FC<Template2Props> = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <table
-            border={0}
-            cellPadding={0}
-            cellSpacing={0}
-            style={{
-              backgroundColor: '#d6002e', // Red
-              borderRadius: '4px',
-            }}
-          >
+          <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#d6002e' }}>
             <tbody>
               <tr>
                 <td

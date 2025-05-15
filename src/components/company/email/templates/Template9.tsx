@@ -32,7 +32,7 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
           <img
             src={bannerBase64}
             alt="Une approche personnalisée pour votre organisme"
-            style={{ maxWidth: '100%', borderRadius: '5px' }}
+            style={{ maxWidth: '100%' }}
           />
         </div>
       )}
@@ -71,6 +71,7 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
         Découvrez nos taux ainsi que nos services et comparez les avec ceux offert par votre institution financière :
       </p>
 
+      {/* Side-by-side buttons: no border-radius, no spacing */}
       <div style={{ textAlign: 'left', marginBottom: '20px' }}>
         <table border={0} cellPadding={0} cellSpacing={0} style={{ display: 'inline-block' }}>
           <tbody>
@@ -82,16 +83,7 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <table
-                    border={0}
-                    cellPadding={0}
-                    cellSpacing={0}
-                    style={{
-                      backgroundColor: '#d6002e', // Red
-                      borderRadius: '4px',
-                      marginRight: '10px'
-                    }}
-                  >
+                  <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#d6002e' }}>
                     <tbody>
                       <tr>
                         <td
@@ -112,7 +104,7 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
                   </table>
                 </a>
               </td>
-      
+
               <td>
                 <a
                   href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services.html"
@@ -120,15 +112,7 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <table
-                    border={0}
-                    cellPadding={0}
-                    cellSpacing={0}
-                    style={{
-                      backgroundColor: '#00336f', // Blue
-                      borderRadius: '4px',
-                    }}
-                  >
+                  <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#00336f' }}>
                     <tbody>
                       <tr>
                         <td
@@ -152,7 +136,7 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
             </tr>
           </tbody>
         </table>
-      </div>      
+      </div>
 
       <p style={paragraphStyle}>
         Consultez quelques{' '}
