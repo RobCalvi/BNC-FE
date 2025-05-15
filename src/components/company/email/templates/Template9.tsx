@@ -76,8 +76,7 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
         rel="noopener noreferrer"
       >
         taux
-      </a>{' '}
-      et{' '}
+      </a> , nos {' '}
       <a
         href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services.html"
         style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
