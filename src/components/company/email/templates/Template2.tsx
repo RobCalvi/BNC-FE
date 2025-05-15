@@ -64,7 +64,7 @@ const Template2: React.FC<Template2Props> = ({
         Je me présente,{' '}
         <a
           href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/notre-equipe/jean-philippe-bernard.html"
-          style={{ color: '#1a73e8' }}
+          style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
         >
           Jean-Philippe Bernard
         </a>
@@ -106,82 +106,32 @@ const Template2: React.FC<Template2Props> = ({
         </tbody>
       </table>
 
-      <p style={paragraphStyle}>
-        À cet égard, je vous invite à tirer un comparatif avec les conditions actuelles de votre institution financière.
-      </p>
-
-      {/* Buttons without borderRadius and no spacing */}
-      <div style={{ textAlign: 'left', marginBottom: '20px' }}>
-        <table border={0} cellPadding={0} cellSpacing={0} style={{ display: 'inline-block' }}>
-          <tbody>
-            <tr>
-              <td>
-                <a
-                  href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-produits/taux-cpg-et-placements-garantis.html"
-                  style={{ textDecoration: 'none' }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#d6002e' }}>
-                    <tbody>
-                      <tr>
-                        <td
-                          style={{
-                            padding: '10px 20px',
-                            fontFamily: 'Arial, sans-serif',
-                            fontSize: '14px',
-                            lineHeight: '16px',
-                            color: '#ffffff',
-                            fontWeight: 'normal',
-                            textAlign: 'center',
-                          }}
-                        >
-                          Consultez les taux
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </a>
-              </td>
-
-              <td>
-                <a
-                  href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services/obnl-fondations.html"
-                  style={{ textDecoration: 'none' }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#00336f' }}>
-                    <tbody>
-                      <tr>
-                        <td
-                          style={{
-                            padding: '10px 20px',
-                            fontFamily: 'Arial, sans-serif',
-                            fontSize: '14px',
-                            lineHeight: '16px',
-                            color: '#ffffff',
-                            fontWeight: 'normal',
-                            textAlign: 'center',
-                          }}
-                        >
-                          Découvrez nos services
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+              <p style={paragraphStyle}>
+      À cet égard, je vous invite à découvrir nos{' '}
+      <a
+        href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-produits.html"
+        style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        taux
+      </a>, nos {' '}
+      <a
+        href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services.html"
+        style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        services
+      </a>{' '}
+      et comparez les avec ceux offert par votre institution financière.
+    </p>
 
       <p style={paragraphStyle}>
         Le Groupe Financier Bernard est spécialisé dans la gestion des organismes comme le vôtre avec près de <strong>100 clients OBNL</strong>. Consultez quelques{' '}
         <a
           href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services/obnl-fondations.html"
-          style={{ color: '#1a73e8' }}
+          style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
         >
           témoignages
         </a>
