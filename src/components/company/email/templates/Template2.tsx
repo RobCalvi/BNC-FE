@@ -138,35 +138,14 @@ const Template2: React.FC<Template2Props> = ({
         . <strong>Pour en apprendre davantage sur notre accompagnement personnalisé des organismes, n’hésitez pas à communiquer avec nous dès aujourd’hui.</strong>
       </p>
 
-      {/* Final Call-to-Action Button (no border radius) */}
-      <div style={{ textAlign: 'left', marginBottom: '20px' }}>
+            <p style={paragraphStyle}>
         <a
           href="https://outlook.office365.com/book/GroupeFinancierBernardFinancireBanqueNationale@cbncnbccs.onmicrosoft.com/"
-          style={{ textDecoration: 'none' }}
-          target="_blank"
-          rel="noopener noreferrer"
+          style={{ ...linkStyle, fontWeight: 'bold' }}
         >
-          <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#d6002e' }}>
-            <tbody>
-              <tr>
-                <td
-                  style={{
-                    padding: '10px 20px',
-                    fontFamily: 'Arial, sans-serif',
-                    fontSize: '14px',
-                    lineHeight: '16px',
-                    color: '#ffffff',
-                    fontWeight: 'normal',
-                    textAlign: 'center',
-                  }}
-                >
-                  Planifiez une rencontre virtuelle
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          Planifiez une rencontre virtuelle
         </a>
-      </div>
+      </p>
 
       <EmailFooter />
     </div>
