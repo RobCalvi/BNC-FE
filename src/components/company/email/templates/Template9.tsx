@@ -53,7 +53,10 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
       <ol style={paragraphStyle}>
         <li>
           Politique de placement absente ou désuète ? → Notre{' '}
-          <a href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services/Outils-OBNL.html" style={linkStyle}>
+          <a 
+          href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services/Outils-OBNL.html" style={linkStyle}
+          style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
+          >
             processus clé en main
           </a>{' '}
           sécurise vos actifs tout en respectant votre mission
@@ -76,7 +79,7 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
         rel="noopener noreferrer"
       >
         taux
-      </a> , nos {' '}
+      </a>, nos {' '}
       <a
         href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services.html"
         style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
@@ -90,7 +93,9 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
 
       <p style={paragraphStyle}>
         Consultez quelques{' '}
-        <a href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services/obnl-fondations.html" style={linkStyle}>
+        <a 
+        href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services/obnl-fondations.html" 
+        style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}>
           témoignages
         </a>{' '}
         et prenez quelques minutes sur TEAMS avec nous pour découvrir pourquoi près de 100 OBNL nous font confiance.
