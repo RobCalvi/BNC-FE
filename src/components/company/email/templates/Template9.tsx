@@ -54,7 +54,7 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
         <li>
           Politique de placement absente ou désuète ? → Notre{' '}
           <a 
-          href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services/Outils-OBNL.html" style={linkStyle}
+          href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services/Outils-OBNL.html"
           style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
           >
             processus clé en main
