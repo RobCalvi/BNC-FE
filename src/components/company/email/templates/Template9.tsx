@@ -67,76 +67,27 @@ const Template9: React.FC<Template9Props> = ({ recipientName, recipientGender })
         </li>
       </ol>
 
-      <p style={paragraphStyle}>
-        Découvrez nos taux ainsi que nos services et comparez les avec ceux offert par votre institution financière :
-      </p>
-
-      {/* Side-by-side buttons: no border-radius, no spacing */}
-      <div style={{ textAlign: 'left', marginBottom: '20px' }}>
-        <table border={0} cellPadding={0} cellSpacing={0} style={{ display: 'inline-block' }}>
-          <tbody>
-            <tr>
-              <td>
-                <a
-                  href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-produits.html"
-                  style={{ textDecoration: 'none' }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#d6002e' }}>
-                    <tbody>
-                      <tr>
-                        <td
-                          style={{
-                            padding: '10px 20px',
-                            fontFamily: 'Arial, sans-serif',
-                            fontSize: '14px',
-                            lineHeight: '16px',
-                            color: '#ffffff',
-                            fontWeight: 'normal',
-                            textAlign: 'center',
-                          }}
-                        >
-                          Consultez les taux
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </a>
-              </td>
-
-              <td>
-                <a
-                  href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services.html"
-                  style={{ textDecoration: 'none' }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <table border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: '#00336f' }}>
-                    <tbody>
-                      <tr>
-                        <td
-                          style={{
-                            padding: '10px 20px',
-                            fontFamily: 'Arial, sans-serif',
-                            fontSize: '14px',
-                            lineHeight: '16px',
-                            color: '#ffffff',
-                            fontWeight: 'normal',
-                            textAlign: 'center',
-                          }}
-                        >
-                          Découvrez nos services
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <p style={paragraphStyle}>
+      Découvrez nos{' '}
+      <a
+        href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-produits.html"
+        style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        taux
+      </a>{' '}
+      et{' '}
+      <a
+        href="https://www.fbngp.ca/conseiller/groupe-financier-bernard/nos-services.html"
+        style={{ color: '#1a73e8', textDecoration: 'underline', fontWeight: 'bold' }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        services
+      </a>{' '}
+      et comparez les avec ceux offert par votre institution financière.
+    </p>
 
       <p style={paragraphStyle}>
         Consultez quelques{' '}
