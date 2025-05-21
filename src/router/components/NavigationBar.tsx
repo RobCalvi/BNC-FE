@@ -15,9 +15,9 @@ const NavigationBar:React.FC = () => {
     <AppBar position='static' component="nav" sx={{background: 'white', borderBottom: theme.palette.primary.main}}>
         <Toolbar sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
             <Box component="div" sx={{display: 'flex', flexDirection: 'row',}}>
-            <Box component="div">
+            {/* <Box component="div">
                 <img src="/logo-cp-groupe-bernard-M.svg" alt="logo.svg" />
-            </Box>
+            </Box> */}
             <Box component="div" sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', color: theme.palette.primary.main}}>
                 <Typography onClick={() => navigate("/")} variant='h6' sx={{fontWeight: 'bold', '&:hover': { cursor: 'pointer'}}}>&nbsp;CRM</Typography>
                 <Box component={"div"} sx={{alignItems: 'flex-end', color: "#444444"}}>
