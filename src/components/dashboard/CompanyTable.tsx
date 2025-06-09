@@ -12,10 +12,18 @@ import styles from './dashboard.module.scss';
 import { templates } from '../company/email/templateOptions';
 import { updateCompanyDetails, deleteCompany } from '../../api/company';
 
+
+
 type CompanyTableProps = {
   rows: BaseCompany[];
   loading: boolean;
 };
+
+interface Contact {
+  phoneNumber: string | null;
+  email: string;
+}
+
   
 /** Map template key -> name, or 'Unknown' */
 function getTemplateName(templateKey: string) {
@@ -173,6 +181,44 @@ function useColumns(navigate: ReturnType<typeof useNavigate>): GridColDef[] {
       headerName: 'Contact',
       valueGetter: (_, row) => row.contactName ?? null,
     },
+    {
+      field: 'contactInfo',
+      headerName: 'Contacts Info',
+      width: 320,
+      sortable: false,
+      filterable: false,
+      renderCell: (params) => {
+        const contacts = params.row.contacts || [];
+        const validContacts = contacts.filter(
+          (c: Contact) => c.phoneNumber || c.email
+        );
+
+        if (validContacts.length === 0) return 'N/A';
+
+        return (
+          <div
+            style={{
+              maxHeight: '5.5em',
+              overflowY: 'auto',
+              fontSize: '0.75rem',
+              padding: '4px',
+              border: '1px solid #ccc',
+              borderRadius: '6px',
+              backgroundColor: '#f9f9f9',
+              width: '100%',
+              lineHeight: '1.4',
+            }}
+          >
+          {validContacts.map((c: Contact, idx: number) => (
+            <div key={idx} style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {c.phoneNumber ?? '—'}, {c.email ?? '—'}
+            </div>
+          ))}
+          </div>
+        );
+      },
+    }
+,
     {
       field: 'latestEmailDatetime',
       headerName: 'Latest Email Date',
